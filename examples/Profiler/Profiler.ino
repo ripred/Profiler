@@ -7,7 +7,7 @@
  * 
  */
 
-#include "Profiler.h"
+#include <Profiler.h>
 
 // Example function that will be profiled
 // 
