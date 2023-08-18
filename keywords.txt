@@ -5,14 +5,14 @@
 ########################################################
 # Datatypes (KEYWORD1)
 ########################################################
-profiler_t                   KEYWORD1
+profiler_t	KEYWORD1
 
 ########################################################
 # Methods, Functions, and Globals (KEYWORD2)
 ########################################################
-profiler_t               KEYWORD2
-enable                   KEYWORD2
-disable                  KEYWORD2
+profiler_t	KEYWORD2
+enable	KEYWORD2
+disable	KEYWORD2
 
 ########################################################
 # Constants (LITERAL1)
