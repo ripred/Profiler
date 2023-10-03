@@ -1,25 +1,29 @@
 /*
  * Profiler.ino
- * 
+ *
  * Example Arduino sketch for the Arduino Profiler library
- * 
- * version 1.0 - August 2023 ++trent m. wyatt
- * 
+ *
+ * version 1.0 -  August 2023 ++trent m. wyatt
+ * version 1.1 - October 2023
+ *    added optional debug pin support
+ *
  */
 
 #include <Profiler.h>
 
-// Example function that will be profiled
-// 
+#define   DEBUG_LED   13
+
+// Example function that will be profiled including debug pin output:
+//
 void foo() {
-    profiler_t profiler;
+    profiler_t profiler(DEBUG_LED);
 
     delay(1000);
 }
 
 // Example function where only part of the code
 // will be profiled using a temporary scope
-// 
+//
 void bar() {
     // this code will not be profiled.
     // yes the code is pointless heh
@@ -31,7 +35,7 @@ void bar() {
     // object in order to time a smaller section of code inside a larger section
     {
         profiler_t profiler;
-        
+
         delay(500);
     }
 
