@@ -34,11 +34,11 @@
 
 #include "Arduino.h"
 #include "SoftwareSerial.h"
-#include "CompileTime.h"
+#include "Profiler.h"
 
 unittest_setup()
 {
-  fprintf(stderr, "CompileTime Library\n");
+  fprintf(stderr, "Profiler Library\n");
 }
 
 
