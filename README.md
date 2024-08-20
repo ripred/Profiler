@@ -1,4 +1,4 @@
-[![Arduino CI](https://github.com/ripred/Profiler/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+<!-- [![Arduino CI](https://github.com/ripred/Profiler/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci) -->
 [![Arduino-lint](https://github.com/ripred/Profiler/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/Profiler/actions/workflows/arduino-lint.yml)
 ![code size:](https://img.shields.io/github/languages/code-size/ripred/Profiler)
 [![GitHub release](https://img.shields.io/github/release/ripred/Profiler.svg?maxAge=3600)](https://github.com/ripred/Profiler/releases)
@@ -6,7 +6,7 @@
 
 
 # Profiler
-Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take, simply by declaring a profiler_t variable anywhere in your code. The output can be disabled and enabled at any time. Very lightweight.
+Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take, simply by declaring a `profiler_t` variable anywhere in your code. The output can be disabled and enabled at any time. Very lightweight.
 
 Updated: Now includes support for optional custom text 😎
 
@@ -49,7 +49,7 @@ void baz() {
 // will be profiled using a temporary scope
 //
 void bar() {
-    // this code will not be profiled.
+    // this code will NOT be profiled.
     // yes the code is pointless heh
     for (int i=0; i < 10; i++) {
         delay(100);
@@ -63,7 +63,7 @@ void bar() {
         delay(500);
     }
 
-    // more pointless code that will not be profiled
+    // more pointless code that will NOT be profiled
     for (int i=0; i < 10; i++) {
         delay(100);
     }
@@ -88,7 +88,7 @@ void loop() {
 output:
 
 ```console
-Time Spent:999
+Time Spent: 999
 Partial Scoped Profile: 500
 Time spent in baz(): 1999
 ```
