@@ -30,7 +30,9 @@ Updated: Now includes support for optional custom text 😎
 
 #define   DEBUG_LED   13
 
-// Example function that will be profiled including debug pin output:
+// Example function that will be profiled including debug pin
+// output (for optional debugging using an oscilloscope or data
+// probe/analyzer to test that a given code path is being executed):
 //
 void foo() {
     profiler_t profiler(DEBUG_LED, Serial);
