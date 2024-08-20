@@ -49,7 +49,7 @@ void baz() {
 // will be profiled using a temporary scope
 //
 void bar() {
-    // this code will not be profiled.
+    // this code will NOT be profiled.
     // yes the code is pointless heh
     for (int i=0; i < 10; i++) {
         delay(100);
@@ -63,7 +63,7 @@ void bar() {
         delay(500);
     }
 
-    // more pointless code that will not be profiled
+    // more pointless code that will NOT be profiled
     for (int i=0; i < 10; i++) {
         delay(100);
     }
