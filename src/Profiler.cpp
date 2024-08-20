@@ -38,6 +38,17 @@ profiler_t::profiler_t(int Pin, Stream &s /* = Serial */) {
     }
 }
 
+
+profiler_t::profiler_t(char const * const msg, Stream &s /* = Serial */) {
+    stream = &s;
+    enabled = true;
+    start = millis();
+    if (nullptr != msg) {
+        text = msg;
+        text.concat(": ");
+    }
+}
+
 profiler_t::profiler_t(int Pin, char const * const msg, Stream &s /* = Serial */) {
     stream = &s;
     enabled = true;

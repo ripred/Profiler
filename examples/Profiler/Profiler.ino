@@ -6,7 +6,7 @@
  * version 1.0 -  August 2023 ++trent m. wyatt
  * version 1.1 - October 2023
  *    added optional debug pin support
- * version 1.3 - August 2024
+ * version 1.5 - August 2024
  *    added optional custom text support
  *
  */
@@ -18,7 +18,7 @@
 // Example function that will be profiled including debug pin output:
 //
 void foo() {
-    profiler_t profiler(DEBUG_LED, Serial);
+    profiler_t profiler(DEBUG_LED);
 
     delay(1000);
 }
@@ -26,7 +26,10 @@ void foo() {
 // Example function that will be profiled without debug pin output, but including the function name:
 //
 void baz() {
-    profiler_t profiler(-1, (String("Time spent in ") + __FUNCTION__ + String("()")).c_str(), Serial);
+    profiler_t profiler(
+        (String("Time spent in ") + 
+        String(__FUNCTION__) + 
+        String("()")).c_str());
 
     delay(2000);
 }
@@ -44,7 +47,7 @@ void bar() {
     // create a temporary scope just to contain the instantiation of a profiler_t
     // object in order to time a smaller section of code inside a larger section
     {
-        profiler_t profiler(-1, "Partial Scoped Profile");
+        profiler_t profiler("Partial Scoped Profile");
 
         delay(500);
     }

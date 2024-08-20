@@ -27,6 +27,7 @@ struct profiler_t {
 
     profiler_t(Stream &s = Serial);
     profiler_t(int pin, Stream &s = Serial);
+    profiler_t(char const * const msg, Stream &s = Serial);
     profiler_t(int pin, char const * const msg, Stream &s = Serial);
     ~profiler_t();
 
