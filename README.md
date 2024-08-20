@@ -40,7 +40,10 @@ void foo() {
 // function name as part of the custom text output:
 // 
 void baz() {
-    profiler_t profiler(-1, (String("Time spent in ") + __FUNCTION__ + String("()")).c_str());
+    profiler_t profiler(-1, (
+        String("Time spent in ") +
+        String(__FUNCTION__) +
+        String("()")).c_str());
 
     delay(2000);
 }
