@@ -4,6 +4,7 @@
 [![GitHub release](https://img.shields.io/github/release/ripred/Profiler.svg?maxAge=3600)](https://github.com/ripred/Profiler/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/Profiler/blob/master/LICENSE)
 
+
 # Profiler
 Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take. The output can be disabled and enabled at any time. Very lightweight.
 
