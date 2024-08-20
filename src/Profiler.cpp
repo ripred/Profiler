@@ -64,7 +64,7 @@ profiler_t::~profiler_t() {
         unsigned long now = millis();
         total = now - start;
         if (text.length() == 0) {
-            text = "Time Spent:";
+            text = "Time Spent: ";
         }
         (*stream).print(text);
         (*stream).println(total);
