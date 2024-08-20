@@ -6,7 +6,7 @@
 
 
 # Profiler
-Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take. The output can be disabled and enabled at any time. Very lightweight.
+Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take, simply by declaring a profiler_t variable anywhere in your code. The output can be disabled and enabled at any time. Very lightweight.
 
 Updated: Now includes support for optional custom text 😎
 
@@ -16,9 +16,11 @@ Updated: Now includes support for optional custom text 😎
  *
  * Example Arduino sketch for the Arduino Profiler library
  *
- * version 1.0 -  August 2023 ++trent m. wyatt
+ * version 1.0 - August 2023 ++trent m. wyatt
  * version 1.1 - October 2023
  *    added optional debug pin support
+ * version 1.3 - August 2024
+ *    added optional custom text support
  *
  */
 
@@ -34,8 +36,9 @@ void foo() {
     delay(1000);
 }
 
-// Example function that will be profiled without debug pin output, but including the function name:
-//
+// Example function that will be profiled without debug pin output, but including the
+// function name as part of the custom text output:
+// 
 void baz() {
     profiler_t profiler(-1, (String("Time spent in ") + __FUNCTION__ + String("()")).c_str(), Serial);
 
