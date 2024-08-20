@@ -38,7 +38,8 @@ void foo() {
     delay(1000);
 }
 
-// Example function that will be profiled without debug pin output, but including the function name:
+// Example function that will be profiled without debug pin output, but
+// including the function name in the output:
 //
 void baz() {
     profiler_t profiler(
