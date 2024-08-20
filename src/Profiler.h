@@ -6,22 +6,28 @@
  * version 1.0 - August 2023 ++trent m. wyatt
  * version 1.1 - October 2023
  *    added optional debug pin support
+ * version 1.2 - August 2024
+ *    added text support
  * 
  */
 #ifndef   PROFILER_H_INCL
 #define   PROFILER_H_INCL
 
 #include <Arduino.h>
+#include <String.h>
 #include <Stream.h>
 
 struct profiler_t {
     static uint8_t  enabled;
     Stream         *stream;
+    String          text;
     unsigned long   start;
+    unsigned long   total;
     int8_t          pin;
 
     profiler_t(Stream &s = Serial);
     profiler_t(int pin, Stream &s = Serial);
+    profiler_t(int pin, char const * const msg = nullptr, Stream &s = Serial);
     ~profiler_t();
 
     static void enable();

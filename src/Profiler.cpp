@@ -6,6 +6,8 @@
  * version 1.0 - August 2023 ++trent m. wyatt
  * version 1.1 - October 2023
  *    added optional debug pin support
+ * version 1.2 - August 2024
+ *    added text support
  * 
  */
 
@@ -36,6 +38,21 @@ profiler_t::profiler_t(int Pin, Stream &s /* = Serial */) {
     }
 }
 
+profiler_t::profiler_t(int Pin, char const * const msg /* = nullptr */, Stream &s /* = Serial */) {
+    stream = &s;
+    enabled = true;
+    start = millis();
+    pin = Pin;
+    if (nullptr != msg) {
+        text = msg;
+        text.concat(": ");
+    }
+    if (pin >= 0) {
+        pinMode(pin, OUTPUT);
+        digitalWrite(pin, HIGH);
+    }
+}
+
 // class destructor
 // 
 profiler_t::~profiler_t() {
@@ -45,8 +62,12 @@ profiler_t::~profiler_t() {
 
     if (enabled) {
         unsigned long now = millis();
-        (*stream).print(F("Time spent: "));
-        (*stream).println(now - start);
+        total = now - start;
+        if (text.length() == 0) {
+            text = "Time Spent:";
+        }
+        (*stream).print(text);
+        (*stream).println(total);
     }
 }
 
