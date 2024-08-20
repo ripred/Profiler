@@ -21,7 +21,7 @@ Updated: Now includes support for optional custom text 😎
  * version 1.0 -  August 2023 ++trent m. wyatt
  * version 1.1 - October 2023
  *    added optional debug pin support
- * version 1.5 - August 2024
+ * version 1.6 - August 2024
  *    added optional custom text support
  *
  */
