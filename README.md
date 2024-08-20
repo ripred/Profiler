@@ -36,8 +36,9 @@ void foo() {
     delay(1000);
 }
 
-// Example function that will be profiled without debug pin output, but including the function name:
-//
+// Example function that will be profiled without debug pin output, but including the
+// function name as part of the custom text output:
+// 
 void baz() {
     profiler_t profiler(-1, (String("Time spent in ") + __FUNCTION__ + String("()")).c_str(), Serial);
 
