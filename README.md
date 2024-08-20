@@ -6,7 +6,7 @@
 
 
 # Profiler
-Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take. The output can be disabled and enabled at any time. Very lightweight.
+Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take, simply by declaring a profiler_t variable anywhere in your code. The output can be disabled and enabled at any time. Very lightweight.
 
 Updated: Now includes support for optional custom text 😎
 
