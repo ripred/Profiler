@@ -63,6 +63,7 @@ void bar() {
     // object in order to time a smaller section of code inside a larger section
     {
         profiler_t profiler("Partial Scoped Profile");
+        // ... some other code you want profiled
 
         delay(500);
     }
