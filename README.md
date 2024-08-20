@@ -88,7 +88,7 @@ void loop() {
 output:
 
 ```console
-Time Spent:999
+Time Spent: 999
 Partial Scoped Profile: 500
 Time spent in baz(): 1999
 ```
