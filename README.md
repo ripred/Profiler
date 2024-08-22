@@ -56,6 +56,7 @@ void loop() {
 void foo() {
     profiler_t profiler(DEBUG_LED);
 
+    // ... some other code you want profiled
     delay(1000);
 }
 
@@ -75,8 +76,8 @@ void bar() {
     // and customize the output text:
     {
         profiler_t profiler("Partial Scoped Profile");
+        
         // ... some other code you want profiled
-
         delay(500);
     }
 
@@ -97,6 +98,7 @@ void baz() {
         String(__FUNCTION__) + 
         String("()")).c_str());
 
+    // ... some other code you want profiled
     delay(2000);
 }
 ```
