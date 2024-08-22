@@ -26,6 +26,13 @@ Updated: Now includes support for optional custom text 😎
  * version 1.6 - August 2024
  *    added optional custom output text support
  *
+ * The available constuctors are:
+ *
+ *    profiler_t(Stream &s = Serial);
+ *    profiler_t(int pin, Stream &s = Serial);
+ *    profiler_t(char const * const msg, Stream &s = Serial);
+ *    profiler_t(int pin, char const * const msg, Stream &s = Serial);
+ * 
  */
 
 #include <Profiler.h>
