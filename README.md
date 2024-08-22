@@ -26,7 +26,7 @@ Updated: Now includes support for optional custom text 😎
  * version 1.6 - August 2024
  *    added optional custom output text support
  *
- * The available constuctors are:
+ * The available constructors are:
  *
  *    profiler_t(Stream &s = Serial);
  *    profiler_t(int pin, Stream &s = Serial);
