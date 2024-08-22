@@ -10,7 +10,7 @@ Easily profile your Arduino functions (or even just a few lines of code) to see 
 
 As soon as that variable goes out of scope it automatically outputs the amount of time it existed, to any serial output path or device you specify. The output can be disabled and enabled at any time. Very lightweight. 
 
-The destination for the output over serial can be optionally specified and you can use any Arduino platform `Stream` subclass. This includes `Serial1` or `Serial2` on boards that have them, and even instances of `SoftwareSerial`, which is also `Stream` compatible. 😄 The default is the standard `Serial` device.
+The destination for the output over serial can be optionally specified and you can use any Arduino platform `Stream` subclass. This includes `Serial1` or `Serial2` on boards that have them, and even instances of `SoftwareSerial`, which is also `Stream` compatible. 😄 If not specified in the variable's construction then the default is the standard `Serial` device.
 
 Several useful constructor types define the features that are used at runtime.
 
