@@ -8,6 +8,8 @@
 # Profiler
 Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take, simply by declaring a `profiler_t` variable anywhere in your code. The output can be disabled and enabled at any time. Very lightweight. 
 
+The destination for the output over serial can be specified and you can use any Arduino platform `Stream` subclass. This includes `Serial1` or `Serial2` on boards that have them, and even instances of `SoftwareSerial`, which is also `Stream` compatible. 😄
+
 Several useful constructor types define the features that are used at runtime.
 
 Updated: Now includes support for optional custom text 😎
