@@ -8,6 +8,8 @@
  *    added optional debug pin support
  * version 1.6 - August 2024
  *    added optional custom output text support
+ * version 1.7 - November 2024
+ *    added human readable time format
  *
  */
 
@@ -19,6 +21,9 @@
 void foo();
 void bar();
 void baz();
+void disabled_example();
+void ms_example();
+void day_example();
 
 void setup() {
     Serial.begin(115200);
@@ -29,6 +34,10 @@ void setup() {
     bar();
 
     baz();
+
+    disabled_example();
+    ms_example();
+    day_example();
 }
 
 void loop() {
@@ -85,3 +94,29 @@ void baz() {
     delay(2000);
 }
 
+// Demonstration of the method "disable()"
+//
+void disabled_example() {
+    profiler_t profiler(DEBUG_LED, "This will not be printed");
+    profiler.disable();
+
+    delay(1000);
+}
+
+// Demonstration of the method "inMilliseconds()"
+//
+void ms_example() {
+    profiler_t profiler(DEBUG_LED, "This will print in milliseconds");
+    profiler.inMilliseconds();
+
+    delay(1500);
+}
+
+// Demonstration of profiling a function that takes a day
+// This example will take some time ...
+//
+void day_example() {
+    profiler_t profiler(DEBUG_LED, "Finally");
+    
+    delay(86400101);
+}
