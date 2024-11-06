@@ -12,9 +12,15 @@ As soon as that variable goes out of scope it automatically outputs the amount o
 
 The destination for the output over serial can be optionally specified and you can use any Arduino platform `Stream` subclass. This includes `Serial1` or `Serial2` on boards that have them, and even instances of `SoftwareSerial`, which is also `Stream` compatible. 😄 If not specified in the variable's construction then the default is the standard `Serial` device.
 
+No need of writing `digitalWrite(pin, HIGH);` and `digitalWrite(pin, LOW);` when profiling digital pins, it will be taken care of by the `profiler_t` variable! The pin will be set to high when the variable is created and set to LOW once it is destroyed / gone out of scope.
+
 Several useful constructor types define the features that are used at runtime.
 
-Updated: Now includes support for optional custom text 😎
+Updated:<br/>
+Now includes support for optional custom text 😎<br/>
+Prints out time as human readable time format (day/hour/minute/second/millisecond)
+
+**WARNING**: Recommended to profile functions that run less than a month. Max profiling time is approximately 50 days.
 
 ```cpp
 /*
@@ -27,6 +33,8 @@ Updated: Now includes support for optional custom text 😎
  *    added optional debug pin support
  * version 1.6 - August 2024
  *    added optional custom output text support
+ * version 1.7 - November 2024
+ *    added human readable time format
  *
  * The available constructors are:
  *
@@ -35,6 +43,13 @@ Updated: Now includes support for optional custom text 😎
  *    profiler_t(char const * const msg, Stream &s = Serial);
  *    profiler_t(int pin, char const * const msg, Stream &s = Serial);
  * 
+ * The available methods are:
+ *    enable();             // DEFAULT
+ *    disable();
+ * 
+ *    inReadableTime();     // DEFAULT
+ *    inMilliseconds();
+ *
  */
 
 #include <Profiler.h>
@@ -45,6 +60,9 @@ Updated: Now includes support for optional custom text 😎
 void foo();
 void bar();
 void baz();
+void disabled_example();
+void ms_example();
+void day_example();
 
 void setup() {
     Serial.begin(115200);
@@ -53,6 +71,10 @@ void setup() {
     foo();
     bar();
     baz();
+
+    disabled_example();
+    ms_example();
+    day_example();
 }
 
 void loop() {
@@ -110,12 +132,41 @@ void baz() {
     // ... some other code you want profiled
     delay(2000);
 }
+
+// Demonstration of the method "disable()"
+//
+void disabled_example() {
+    profiler_t profiler(DEBUG_LED, "This will not be printed");
+    profiler.disable();
+
+    delay(1000);
+}
+
+// Demonstration of the method "inMilliseconds()"
+//
+void ms_example() {
+    profiler_t profiler(DEBUG_LED, "This will print in milliseconds");
+    profiler.inMilliseconds();
+
+    delay(1500);
+}
+
+// Demonstration of profiling a function that takes a day
+// This example will take some time ...
+//
+void day_example() {
+    profiler_t profiler(DEBUG_LED, "Finally");
+    
+    delay(86400101);
+}
 ```
 
 output:
 
 ```console
-Time Spent: 999
-Partial Scoped Profile: 500
-Time spent in baz(): 1999
+Time Spent: 999ms
+Partial Scoped Profile: 500ms
+Time spent in baz(): 1s 999ms
+This will print in milliseconds: 1500
+Finally: 1d 0h 0m 0s 101ms
 ```
