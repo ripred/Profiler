@@ -43,6 +43,7 @@ profiler_t::profiler_t(char const * const msg, Stream &s /* = Serial */) {
     stream = &s;
     enabled = true;
     start = millis();
+    pin = -1;
     if (nullptr != msg) {
         text = msg;
         text.concat(": ");
