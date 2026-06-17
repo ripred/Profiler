@@ -5,6 +5,12 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/Profiler/blob/main/LICENSE)
 
 
+[![Arduino CI](https://github.com/ripred/Profiler/actions/workflows/arduino_test_runner.yml/badge.svg)](https://github.com/ripred/Profiler/actions/workflows/arduino_test_runner.yml)
+[![JSON check](https://github.com/ripred/Profiler/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/Profiler/actions/workflows/jsoncheck.yml)
+[![Arduino Library Manager](https://www.ardu-badge.com/badge/Profiler.svg)](https://www.ardu-badge.com/Profiler)
+[![Stars](https://flat.badgen.net/github/stars/ripred/Profiler)](https://github.com/ripred/Profiler/stargazers)
+[![Forks](https://flat.badgen.net/github/forks/ripred/Profiler)](https://github.com/ripred/Profiler/network/members)
+
 # Profiler
 Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take, simply by declaring a `profiler_t` variable anywhere in your code. 
 
