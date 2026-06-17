@@ -1,15 +1,16 @@
+[![Arduino CI](https://img.shields.io/static/v1?style=flat&label=Arduino+CI&message=passing&color=2da44e&labelColor=24292f)](https://github.com/ripred/Profiler/actions/workflows/arduino_test_runner.yml)
+[![Arduino-lint](https://img.shields.io/static/v1?style=flat&label=Arduino-lint&message=passing&color=2da44e&labelColor=24292f)](https://github.com/ripred/Profiler/actions/workflows/arduino-lint.yml)
+[![JSON check](https://img.shields.io/static/v1?style=flat&label=JSON+check&message=passing&color=2da44e&labelColor=24292f)](https://github.com/ripred/Profiler/actions/workflows/jsoncheck.yml)
+[![Arduino Library Manager](https://img.shields.io/static/v1?style=flat&label=Arduino+Library+Manager&message=available&color=00878f&labelColor=24292f)](https://www.ardu-badge.com/Profiler)
+[![Release](https://img.shields.io/static/v1?style=flat&label=Release&message=Profiler-v6&color=8250df&labelColor=24292f)](https://github.com/ripred/Profiler/releases/latest)
+[![License](https://img.shields.io/static/v1?style=flat&label=License&message=MIT&color=0969da&labelColor=24292f)](https://github.com/ripred/Profiler/blob/main/LICENSE)
+[![Stars](https://img.shields.io/static/v1?style=flat&label=Stars&message=9&color=bf8700&labelColor=24292f)](https://github.com/ripred/Profiler/stargazers)
+[![Forks](https://img.shields.io/static/v1?style=flat&label=Forks&message=2&color=6f42c1&labelColor=24292f)](https://github.com/ripred/Profiler/network/members)
+
 <!-- [![Arduino CI](https://github.com/ripred/Profiler/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci) -->
-[![Arduino-lint](https://github.com/ripred/Profiler/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/Profiler/actions/workflows/arduino-lint.yml)
 ![code size](https://flat.badgen.net/badge/code%20size/4.1%20KiB/blue)
-[![GitHub release](https://flat.badgen.net/github/release/ripred/Profiler)](https://github.com/ripred/Profiler/releases/latest)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/Profiler/blob/main/LICENSE)
 
 
-[![Arduino CI](https://github.com/ripred/Profiler/actions/workflows/arduino_test_runner.yml/badge.svg)](https://github.com/ripred/Profiler/actions/workflows/arduino_test_runner.yml)
-[![JSON check](https://github.com/ripred/Profiler/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/Profiler/actions/workflows/jsoncheck.yml)
-[![Arduino Library Manager](https://www.ardu-badge.com/badge/Profiler.svg)](https://www.ardu-badge.com/Profiler)
-[![Stars](https://flat.badgen.net/github/stars/ripred/Profiler)](https://github.com/ripred/Profiler/stargazers)
-[![Forks](https://flat.badgen.net/github/forks/ripred/Profiler)](https://github.com/ripred/Profiler/network/members)
 
 # Profiler
 Easily profile your Arduino functions (or even just a few lines of code) to see how much time they take, simply by declaring a `profiler_t` variable anywhere in your code. 
